@@ -1,0 +1,9 @@
+<launch>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="go1_xml_path" default="$(env HOME)/mujoco_menagerie/unitree_go1/go1.xml"/>
+
+  <node pkg="safety_block" exec="safety_node" name="safety_node" output="screen" emulate_tty="true">
+    <param name="use_sim_time" value="$(var use_sim_time)"/>
+    <param name="go1_xml_path" value="$(var go1_xml_path)"/>
+  </node>
+</launch>
